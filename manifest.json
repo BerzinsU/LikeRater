@@ -1,0 +1,28 @@
+{
+  "name": "Like Rater",
+  "description": "Shows YT like/views ratio",
+  "version": "0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab"],
+  "icons": {
+    "48": "/images/icon_48.png",
+    "128": "/images/icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/watch?*",
+        "http://www.youtube.com/watch?*"
+      ],
+      "js": [
+        "rater.js"
+      ],
+      "css": [
+        "rater.css"
+      ]
+    }
+  ]
+}
